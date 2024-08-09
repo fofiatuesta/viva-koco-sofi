@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ungidas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Paso 1: Menú -->
+    <header>
+        <div class="brand-logo">
+            <!-- Aquí puedes poner tu imagen de marca -->
+            <img src="/LOGO.jpg" alt="Logo de Marca" width="600">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#orden">Orden</a></li>
+                <li><a href="#reserva">Reserva</a></li>
+                <li><a href="#locacion">Locación</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Paso 2: Panel de fotos -->
+
+
+    <section class="hero">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+              <img src="/foto1.jpg" alt="Image 1">
+           
+            </div>
+            <div class="mySlides fade">
+              <img src="/foto2.jpg" alt="Image 2">
+           
+            </div>
+            <div class="mySlides fade">
+              <img src="/foto4.jpg" alt="Image 3">
+           
+            </div>
+        
+            <!-- Navigation arrows -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <!-- Dots -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+    
+      
+        </div>
+      </section>
+
+    <!-- Paso 3: Productos -->
+    <section class="productos">
+        <div class="producto" onclick="openProduct('conotacon')">
+            <img src="/Untitled.jpg" alt="Patacones" width="200">
+            <div class="info">
+                <h3 class="subtema">CONOTACON</h3>
+                <p class="descripcion"></p>
+            </div>
+        </div>
+        <div class="producto" onclick="openProduct('pinchos')">
+            <img src="pinchos.jpg" alt="Pinchos" height="70">
+            <div class="info">
+                <h3 class="subtema">PINCHOS</h3>
+                <p class="descripcion"></p>
+            </div>
+        </div>
+        <div class="producto" onclick="openProduct('sopas')">
+            <img src="sopas.jpg" alt="Sopas" width="200">
+            <div class="info">
+                <h3 class="subtema">MIS RAICES</h3>
+                <p class="descripcion"></p>
+            </div>
+        </div>
+        <div class="producto" onclick="openProduct('alitas')">
+            <img src="alitas.jpg" alt="Alitas" width="200">
+            <div class="info">
+                <h3 class="subtema">ALAS</h3>
+                <p class="descripcion"></p>
+            </div>
+        </div>
+        <div class="producto" onclick="openProduct('bebidas')">
+            <img src="bebidas.jpg" alt="Bebidas">
+            <div class="info">
+                <h3 class="subtema">Bebidas</h3>
+                <p class="descripcion">Descripción de las bebidas.</p>
+            </div>
+        </div>
+        <div class="producto" onclick="openProduct('acompañamientos')">
+            <img src="acompañamientos.jpg" alt="Acompañamientos">
+            <div class="info">
+                <h3 class="subtema">ACOMPAÑAMIENTOS</h3>
+                <p class="descripcion">Descripción de los acompañamientos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paso 4: Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Sazón del Reino 2022</h2>
+            <div class="contact-info">
+                <a href="mailto:contacto@ungidas.com">Contactos</a>
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank">Facebook</a>
+                <a href="https://instagram.com" target="_blank">Instagram</a>
+                <a href="https://whatsapp.com" target="_blank">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Templates for Product Pages -->
+    <div id="product-template" style="display:none;">
+        <header>
+            <div class="logo">Ungidas</div>
+            <nav>
+                <ul>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#orden">Orden</a></li>
+                    <li><a href="#reserva">Reserva</a></li>
+                    <li><a href="#locacion">Locación</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="product-detail">
+            <h1 id="product-name"></h1>
+            <div class="product-images">
+                <img src="detail1.jpg" alt="Imagen Detalle 1">
+                <img src="detail2.jpg" alt="Imagen Detalle 2">
+                <img src="detail3.jpg" alt="Imagen Detalle 3">
+                <img src="detail4.jpg" alt="Imagen Detalle 4">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function openProduct(productName) {
+            var productDetails = {
+                'conotacon': 'Conotacon',
+                'pinchos': 'Pinchos',
+                'sopas': 'Sopas',
+                'alitas': 'Alitas',
+                'bebidas': 'Bebidas',
+                'acompañamientos': 'Acompañamientos'
+            };
+            var detailPage = document.getElementById('product-template').cloneNode(true);
+            detailPage.style.display = 'block';
+            detailPage.querySelector('#product-name').textContent = productDetails[productName];
+            document.body.innerHTML = '';
+            document.body.appendChild(detailPage);
+        }
+    </script>
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
+        
+    
